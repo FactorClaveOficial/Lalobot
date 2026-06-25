@@ -1,0 +1,27 @@
+[submodule "TorBot"]
+	path = TorBot
+	url = https://github.com/DedSecInside/TorBot.git
+
+[submodule "Zen"]
+	path = Zen
+	url = https://github.com/s0md3v/Zen
+
+[submodule "awesome-claude-skills"]
+	path = awesome-claude-skills
+	url = https://github.com/ComposioHQ/awesome-claude-skills.git
+
+[submodule "awesome-osint"]
+	path = awesome-osint
+	url = https://github.com/jivoi/awesome-osint.git
+
+[submodule "changedetection.io"]
+	path = changedetection.io
+	url = https://github.com/dgtlmoon/changedetection.io
+
+[submodule "comprasmx-dashboard"]
+	path = comprasmx-dashboard
+	url = https://github.com/raulgabino/comprasmx-dashboard.git
+
+[submodule "sherlock"]
+	path = sherlock
+	url = https://github.com/sherlock-project/sherlock.git
