@@ -1,0 +1,11 @@
+Update available! 0.16.1 --> 0.16.0
+https://github.com/sherlock-project/sherlock/releases/tag/v0.16.0
+[*] Checking username limmd.a on:
+
+[+] BoardGameGeek: https://boardgamegeek.com/user/limmd.a
+[+] Trovo: https://trovo.live/s/limmd.a/
+[+] Vero: https://vero.co/limmd.a
+[+] omg.lol: https://limmd.a.omg.lol
+[+] BabyRu: https://www.baby.ru/u/limmd.a
+
+[*] Search completed with 5 results

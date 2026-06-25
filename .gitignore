@@ -1,0 +1,16 @@
+# Claves y datos sensibles
+.ssh/
+.claude.json
+.claude/
+.bash_history
+.wget-hsts
+
+# Datos sensibles del datastore
+datastore/secret.txt
+
+# Caché y datos locales
+.cache/
+.local/
+.npm/
+.bashrc
+.profile

@@ -1,0 +1,102 @@
+  Hacker Newsnew | past | comments | ask | show | jobs | submit  login                                                                                                 
+                                                                                                                                                                       
+
+ 1.                                                                  OpenAI Submits S-1 Draft to SEC ( openai.com )                                                    
+     227 points by hackerBanana 2 hours ago | hide | 140 comments                                                                                                      
+                                                                                                                                                                       
+ 2.                                                                  Surveillance Is Not Safety: A statement on the UK's latest threat to privacy [pdf] ( signal.org ) 
+     335 points by g0xA52A2A 4 hours ago | hide | 103 comments                                                                                                         
+                                                                                                                                                                       
+ 3.                                                                  Siri AI ( apple.com )                                                                             
+     359 points by 0xedb 5 hours ago | hide | 297 comments                                                                                                             
+                                                                                                                                                                       
+ 4.                                                                  Show HN: Performative-UI – A react component library of design tropes ( vorpus.github.io )        
+     730 points by lizhang 10 hours ago | hide | 147 comments                                                                                                          
+                                                                                                                                                                       
+ 5.                                                                  MiMo-v2.5-Pro-UltraSpeed: 1T model with 1000 tokens per second ( xiaomi.com )                     
+     476 points by gainsurier 8 hours ago | hide | 326 comments                                                                                                        
+                                                                                                                                                                       
+ 6.                                                                  Apple Core AI Framework ( developer.apple.com )                                                   
+     157 points by hmokiguess 5 hours ago | hide | 24 comments                                                                                                         
+                                                                                                                                                                       
+ 7.                                                                  EU-banned pesticides found in rice, tea and spices ( foodwatch.org )                              
+     211 points by john-titor 8 hours ago | hide | 80 comments                                                                                                         
+                                                                                                                                                                       
+ 8.                                                                  Looking Forward to Postgres 19: Query Hints ( pgedge.com )                                        
+     26 points by jjgreen 2 hours ago | hide | 2 comments                                                                                                              
+                                                                                                                                                                       
+ 9.                                                                  Anti-social: It's fads, not friends, which now dominate social media feeds ( bbc.com )            
+     526 points by 1vuio0pswjnm7 12 hours ago | hide | 394 comments                                                                                                    
+                                                                                                                                                                       
+10.                                                                  Show HN: Gitdot – a better GitHub. Open-source, written in Rust ( gitdot.io )                     
+     115 points by baepaul 4 hours ago | hide | 110 comments                                                                                                           
+                                                                                                                                                                       
+11.                                                                  Why are cells small? ( burrito.bio )                                                              
+     100 points by mailyk 4 hours ago | hide | 44 comments                                                                                                             
+                                                                                                                                                                       
+12.                                                                  xAI is looking more like a datacentre REIT than a frontier lab ( martinalderson.com )             
+     366 points by martinald 8 hours ago | hide | 291 comments                                                                                                         
+                                                                                                                                                                       
+13.                                                                  Apple reveals new AI architecture built around Google Gemini models ( macrumors.com )             
+     309 points by unclefuzzy 4 hours ago | hide | 293 comments                                                                                                        
+                                                                                                                                                                       
+14.                                                                  FrontierCode ( cognition.ai )                                                                     
+     73 points by streamer45 3 hours ago | hide | 16 comments                                                                                                          
+                                                                                                                                                                       
+15.                                                                  Ask HN: What are tools you have made for yourself since the advent of AI?                         
+     123 points by aryamaan 5 hours ago | hide | 225 comments                                                                                                          
+                                                                                                                                                                       
+16.                                                                  Doing Something That's Never Been Done Before ( talglobus.com )                                   
+     21 points by surprisetalk 3 hours ago | hide | 9 comments                                                                                                         
+                                                                                                                                                                       
+17.                                                                  Launch HN: Intuned (YC S22) – Build and run reliable browser automations as code ( intunedhq.com )
+     97 points by fkilaiwi 8 hours ago | hide | 44 comments                                                                                                            
+                                                                                                                                                                       
+18.                                                                  AI is slowing down ( wheresyoured.at )                                                            
+     354 points by crescit_eundo 8 hours ago | hide | 375 comments                                                                                                     
+                                                                                                                                                                       
+19.                                                                  Fooling Go's X.509 Certificate Verification ( danielmangum.com )                                  
+     34 points by hasheddan 4 hours ago | hide | 17 comments                                                                                                           
+                                                                                                                                                                       
+20.                                                                  OCaml Onboarding: Introduction to the Dune build system ( ocamlpro.com )                          
+     139 points by andrewstetsenko 9 hours ago | hide | 17 comments                                                                                                    
+                                                                                                                                                                       
+21.                                                                  Switzerland wil have a referendum to cap population at 10M ( admin.ch )                           
+     222 points by napolux 4 hours ago | hide | 440 comments                                                                                                           
+                                                                                                                                                                       
+22.                                                                  1worldflag: A blue dot on a transparent background ( 1worldflag.com )                             
+     163 points by davidbarker 17 hours ago | hide | 138 comments                                                                                                      
+                                                                                                                                                                       
+23.                                                                  Stop the Apple Music app from launching ( lowtechguys.com )                                       
+     559 points by bobbiechen 7 hours ago | hide | 222 comments                                                                                                        
+                                                                                                                                                                       
+24.                                                                  Massachusetts bans sale of precise location data in new privacy rights bill ( techcrunch.com )    
+     238 points by 01-_- 7 hours ago | hide | 37 comments                                                                                                              
+                                                                                                                                                                       
+25.                                                                  How much of Thermo Fisher's antibody data has been manipulated? ( reeserichardson.blog )          
+     396 points by mhrmsn 17 hours ago | hide | 87 comments                                                                                                            
+                                                                                                                                                                       
+26.                                                                  Using XDG-Compliant Config Files (2024) ( wxwidgets.org )                                         
+     34 points by ankitg12 6 hours ago | hide | 7 comments                                                                                                             
+                                                                                                                                                                       
+27.                                                                  Show HN: Mach – A compiled systems language looking for contributions ( github.com/octalide )     
+     6 points by octalide 1 hour ago | hide | 1 comment                                                                                                                
+                                                                                                                                                                       
+28.                                                                  Are you expected to run five Python type-checkers now? ( pyrefly.org )                            
+     132 points by ocamoss 11 hours ago | hide | 147 comments                                                                                                          
+                                                                                                                                                                       
+29.                                                                  Apple WWDC 2026 ( apple.com )                                                                     
+     233 points by nextstep 6 hours ago | hide | 452 comments                                                                                                          
+                                                                                                                                                                       
+30.                                                                  Apple bets cheaper AI will woo small developers ( techcrunch.com )                                
+     7 points by jbernardo95 3 hours ago | hide | 2 comments                                                                                                           
+                                                                                                                                                                       
+                                                                                                                                                                       
+     More                                                                                                                                                              
+                                                                                                                                                                       
+                                                                                                                                                                       
+                                                                                                                                                                       
+                                                                                                                                                                       
+Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact                                                                                              
+                                                                                                                                                                       
+Search:                                                                                                                                                                

@@ -1,0 +1,145 @@
+{
+  "body": "",
+  "browser_steps": [],
+  "browser_steps_last_error_step": null,
+  "conditions": [
+    {
+      "field": "None",
+      "operator": "None",
+      "value": ""
+    }
+  ],
+  "conditions_match_logic": "ALL",
+  "check_count": 4,
+  "check_unique_lines": false,
+  "consecutive_filter_failures": 0,
+  "content-type": null,
+  "date_created": 1780929242,
+  "extract_lines_containing": [],
+  "extract_text": [],
+  "llm_intent": "",
+  "llm_change_summary": "",
+  "llm_prefilter": null,
+  "llm_evaluation_cache": {},
+  "fetch_backend": "system",
+  "fetch_time": 1.747,
+  "filter_failure_notification_send": true,
+  "filter_text_added": true,
+  "filter_text_removed": true,
+  "filter_text_replaced": true,
+  "follow_price_changes": true,
+  "has_ldjson_price_data": null,
+  "history_snapshot_max_length": null,
+  "headers": {},
+  "ignore_text": [],
+  "ignore_status_codes": false,
+  "in_stock_only": true,
+  "include_filters": [],
+  "last_checked": 1780964368,
+  "last_error": "Got HTML content but no text found (With 200 reply code)",
+  "last_notification_error": null,
+  "last_viewed": 0,
+  "method": "GET",
+  "notification_alert_count": 0,
+  "notification_body": "",
+  "notification_format": "System default",
+  "notification_muted": false,
+  "notification_screenshot": false,
+  "notification_title": "",
+  "notification_urls": [],
+  "page_title": null,
+  "paused": false,
+  "previous_md5": false,
+  "processor": "text_json_diff",
+  "price_change_threshold_percent": null,
+  "proxy": null,
+  "remote_server_reply": null,
+  "sort_text_alphabetically": false,
+  "strip_ignored_lines": null,
+  "subtractive_selectors": [],
+  "tag": "",
+  "tags": [
+    "570480cf-7359-46ba-ae10-ab2b4fe62b52"
+  ],
+  "text_should_not_be_present": [],
+  "time_between_check": {
+    "weeks": null,
+    "days": null,
+    "hours": null,
+    "minutes": null,
+    "seconds": null
+  },
+  "time_between_check_use_default": true,
+  "time_schedule_limit": {
+    "enabled": false,
+    "monday": {
+      "enabled": false,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "tuesday": {
+      "enabled": false,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "wednesday": {
+      "enabled": false,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "thursday": {
+      "enabled": false,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "friday": {
+      "enabled": false,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "saturday": {
+      "enabled": false,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "sunday": {
+      "enabled": false,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "timezone": null
+  },
+  "title": "",
+  "track_ldjson_price_data": null,
+  "trim_text_whitespace": false,
+  "remove_duplicate_lines": false,
+  "trigger_text": [],
+  "url": "https://www.gob.mx/",
+  "use_page_title_in_list": null,
+  "uuid": "fee8b66d-61b3-4dd4-bbc1-61a5eb1a24da",
+  "webdriver_delay": null,
+  "webdriver_js_execute_code": "",
+  "scheduler_timezone_default": null,
+  "save_button": true
+}

@@ -1,0 +1,136 @@
+{
+  "body": null,
+  "browser_steps": [],
+  "browser_steps_last_error_step": null,
+  "conditions": [],
+  "conditions_match_logic": "ALL",
+  "check_count": 1,
+  "check_unique_lines": false,
+  "consecutive_filter_failures": 0,
+  "content-type": null,
+  "date_created": 1780929303,
+  "extract_lines_containing": [],
+  "extract_text": [],
+  "llm_intent": "",
+  "llm_change_summary": "",
+  "llm_prefilter": null,
+  "llm_evaluation_cache": {},
+  "fetch_backend": "system",
+  "fetch_time": 0.169,
+  "filter_failure_notification_send": true,
+  "filter_text_added": true,
+  "filter_text_removed": true,
+  "filter_text_replaced": true,
+  "follow_price_changes": true,
+  "has_ldjson_price_data": null,
+  "history_snapshot_max_length": null,
+  "headers": {},
+  "ignore_text": [],
+  "ignore_status_codes": null,
+  "in_stock_only": true,
+  "include_filters": [],
+  "last_checked": 1780964392,
+  "last_error": "Got HTML content but no text found (With 200 reply code)",
+  "last_notification_error": null,
+  "last_viewed": 0,
+  "method": "GET",
+  "notification_alert_count": 0,
+  "notification_body": null,
+  "notification_format": "System default",
+  "notification_muted": false,
+  "notification_screenshot": false,
+  "notification_title": null,
+  "notification_urls": [],
+  "page_title": null,
+  "paused": false,
+  "previous_md5": false,
+  "processor": "text_json_diff",
+  "price_change_threshold_percent": null,
+  "proxy": null,
+  "remote_server_reply": "nginx/1.17.1",
+  "sort_text_alphabetically": false,
+  "strip_ignored_lines": null,
+  "subtractive_selectors": [],
+  "tag": "",
+  "tags": [
+    "570480cf-7359-46ba-ae10-ab2b4fe62b52"
+  ],
+  "text_should_not_be_present": [],
+  "time_between_check": {
+    "weeks": null,
+    "days": null,
+    "hours": null,
+    "minutes": null,
+    "seconds": null
+  },
+  "time_between_check_use_default": true,
+  "time_schedule_limit": {
+    "enabled": false,
+    "monday": {
+      "enabled": true,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "tuesday": {
+      "enabled": true,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "wednesday": {
+      "enabled": true,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "thursday": {
+      "enabled": true,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "friday": {
+      "enabled": true,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "saturday": {
+      "enabled": true,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    },
+    "sunday": {
+      "enabled": true,
+      "start_time": "00:00",
+      "duration": {
+        "hours": "24",
+        "minutes": "00"
+      }
+    }
+  },
+  "title": null,
+  "track_ldjson_price_data": null,
+  "trim_text_whitespace": false,
+  "remove_duplicate_lines": false,
+  "trigger_text": [],
+  "url": "https://cedulaprofesional.sep.gob.mx/",
+  "use_page_title_in_list": null,
+  "uuid": "90639444-6136-4ab7-a587-c5f1e7eb6b20",
+  "webdriver_delay": null,
+  "webdriver_js_execute_code": null
+}

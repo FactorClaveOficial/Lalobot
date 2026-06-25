@@ -1,0 +1,102 @@
+  Hacker Newsnew | past | comments | ask | show | jobs | submit  login                                                                                                  
+                                                                                                                                                                        
+
+ 1.                                                                   Anti-social: It's fads, not friends, which now dominate social media feeds ( bbc.com )            
+     135 points by 1vuio0pswjnm7 2 hours ago | hide | 99 comments                                                                                                       
+                                                                                                                                                                        
+ 2.                                                                   Zig by Example ( github.com/boringcollege )                                                       
+     79 points by dariubs 1 hour ago | hide | 12 comments                                                                                                               
+                                                                                                                                                                        
+ 3.                                                                   Launch HN: Intuned (YC S22) – Build and run reliable browser automations as code ( intunedhq.com )
+     35 points by fkilaiwi 51 minutes ago | hide | 7 comments                                                                                                           
+                                                                                                                                                                        
+ 4.                                                                   Spanish traders set the standard forGnuCash database design ( handson.money )                     
+     43 points by vitalikpie 1 hour ago | hide | 34 comments                                                                                                            
+                                                                                                                                                                        
+ 5.                                                                   The Cypherpunk Library ( cypherpunkbooks.com )                                                    
+     186 points by yu3zhou4 5 hours ago | hide | 59 comments                                                                                                            
+                                                                                                                                                                        
+ 6.                                                                   How much of Thermo Fisher's antibody data has been manipulated? ( reeserichardson.blog )          
+     177 points by mhrmsn 7 hours ago | hide | 44 comments                                                                                                              
+                                                                                                                                                                        
+ 7.                                                                   Zig Structs of Arrays (2024) ( andreashohmann.com )                                               
+     67 points by Tomte 4 hours ago | hide | 13 comments                                                                                                                
+                                                                                                                                                                        
+ 8.                                                                   Are you expected to run five Python type-checkers now? ( pyrefly.org )                            
+     17 points by ocamoss 2 hours ago | hide | 3 comments                                                                                                               
+                                                                                                                                                                        
+ 9.                                                                   Dopamine Fracking ( igerman.cc )                                                                  
+     554 points by igmn 11 hours ago | hide | 287 comments                                                                                                              
+                                                                                                                                                                        
+10.                                                                   1k Data Breaches Later, the Disclosure Lag Is Worse ( troyhunt.com )                              
+     232 points by 882542F3884314B 11 hours ago | hide | 84 comments                                                                                                    
+                                                                                                                                                                        
+11.                                                                   Building from zero after addiction, prison, and a felony ( gavinray97.github.io )                 
+     758 points by gavinray 19 hours ago | hide | 345 comments                                                                                                          
+                                                                                                                                                                        
+12.                                                                   Spherical Voronoi Diagram ( jasondavies.com )                                                     
+     69 points by marysminefnuf 6 hours ago | hide | 20 comments                                                                                                        
+                                                                                                                                                                        
+13.                                                                   Config Files That Run Code: Supply Chain Security Blindspot ( safedep.io )                        
+     34 points by signa11 4 hours ago | hide | 4 comments                                                                                                               
+                                                                                                                                                                        
+14.                                                                   APC–2 – A professional record cutter for producing original playback discs ( teenage.engineering )
+     244 points by vthommeret 12 hours ago | hide | 145 comments                                                                                                        
+                                                                                                                                                                        
+15.                                                                   A Family Project (2022) ( bittersoutherner.com )                                                  
+     59 points by surprisetalk 5 hours ago | hide | 4 comments                                                                                                          
+                                                                                                                                                                        
+16.                                                                   The Butlerian Jihad Has Begun ( syndekit.substack.com )                                           
+     34 points by speckx 1 hour ago | hide | 35 comments                                                                                                                
+                                                                                                                                                                        
+17.                                                                   The Smallest Brain You Can Build: A Perceptron in Python ( ranpara.net )                          
+     250 points by DevarshRanpara 13 hours ago | hide | 48 comments                                                                                                     
+                                                                                                                                                                        
+18.                                                                   Richard Scolyer Has Died ( bbc.com )                                                              
+     103 points by nicwilson 10 hours ago | hide | 26 comments                                                                                                          
+                                                                                                                                                                        
+19.                                                                   Nvidia partners with LG robotics to build humanoid robots in South Korea ( nvidia.com )           
+     29 points by spwa4 2 hours ago | hide | 16 comments                                                                                                                
+                                                                                                                                                                        
+20.                                                                   Playing with Vision Embeddings ( prestonbjensen.com )                                             
+     105 points by prestoj 9 hours ago | hide | 9 comments                                                                                                              
+                                                                                                                                                                        
+21.                                                                   Making peace with your unlived dreams (2023) ( nik.art )                                          
+     267 points by herbertl 20 hours ago | hide | 162 comments                                                                                                          
+                                                                                                                                                                        
+22.                                                                   New drug 'functionally cures' many hepatitis B virus infections ( science.org )                   
+     221 points by gmays 12 hours ago | hide | 40 comments                                                                                                              
+                                                                                                                                                                        
+23.                                                                   Show HN: I Derived a Pancake ( absurdlyoptimized.com )                                            
+     279 points by bkazez 17 hours ago | hide | 114 comments                                                                                                            
+                                                                                                                                                                        
+24.                                                                   A modular impact diverting mechanism for football helmets [pdf] ( sfu.ca )                        
+     9 points by luu 3 hours ago | hide | 2 comments                                                                                                                    
+                                                                                                                                                                        
+25.                                                                   Tiny hackable CUDA language model implementation ( github.com/markusheimerl )                     
+     50 points by markusheimerl 10 hours ago | hide | 10 comments                                                                                                       
+                                                                                                                                                                        
+26.                                                                   DeepSeek V4 Pro beats GPT-5.5 Pro on precision ( runtimewire.com )                                
+     351 points by yogthos 12 hours ago | hide | 179 comments                                                                                                           
+                                                                                                                                                                        
+27.                                                                   Algorithmic Monocultures in Hiring ( algorithmichiring.github.io )                                
+     133 points by drchiu 12 hours ago | hide | 67 comments                                                                                                             
+                                                                                                                                                                        
+28.                                                                   Age verification tech could put children at greater risk, says think tank ( computerweekly.com )  
+     125 points by robtherobber 6 hours ago | hide | 95 comments                                                                                                        
+                                                                                                                                                                        
+29.                                                                   A Matter Wi-Fi Light Bulb in Rust on the Raspberry Pi Pico 2 W ( github.com/melastmohican )       
+     141 points by melastmohican 14 hours ago | hide | 26 comments                                                                                                      
+                                                                                                                                                                        
+30.                                                                   Show HN: Lathe – Use LLMs to learn a new domain, not skip past it ( github.com/devenjarvis )      
+     353 points by devenjarvis 1 day ago | hide | 63 comments                                                                                                           
+                                                                                                                                                                        
+                                                                                                                                                                        
+     More                                                                                                                                                               
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                                                                                        
+Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact                                                                                               
+                                                                                                                                                                        
+Search:                                                                                                                                                                 
