@@ -5,6 +5,11 @@
 .bash_history
 .wget-hsts
 
+# Bytecode Python
+__pycache__/
+*.pyc
+*.pyo
+
 # Datos sensibles del datastore
 datastore/secret.txt
 
