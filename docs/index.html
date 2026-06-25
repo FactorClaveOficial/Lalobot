@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lalobot — OSINT Intelligence</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d1117; color: #c9d1d9; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+    /* ── Header ── */
+    header {
+      background: #161b22; border-bottom: 1px solid #30363d;
+      padding: 16px 32px; display: flex; align-items: center; gap: 16px;
+    }
+    .logo { font-size: 1.35rem; font-weight: 800; color: #58a6ff; letter-spacing: 1px; }
+    .logo span { color: #c9d1d9; font-weight: 400; font-size: .9rem; margin-left: 10px; }
+    .status-pill {
+      margin-left: auto; display: flex; align-items: center; gap: 8px;
+      background: #0d1117; border: 1px solid #30363d; border-radius: 20px;
+      padding: 5px 14px; font-size: .78rem; color: #8b949e;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #484f58; transition: background .4s; }
+    .dot.online  { background: #3fb950; box-shadow: 0 0 6px #3fb950; }
+    .dot.offline { background: #f85149; }
+
+    /* ── Hero ── */
+    .hero { text-align: center; padding: 56px 24px 40px; }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; color: #f0f6fc; margin-bottom: 12px; }
+    .hero h1 em { font-style: normal; color: #58a6ff; }
+    .hero p { color: #8b949e; font-size: 1rem; max-width: 480px; margin: 0 auto; line-height: 1.6; }
+
+    /* ── Search box ── */
+    .search-wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+    .input-shell {
+      display: flex; border: 1.5px solid #30363d; border-radius: 12px; overflow: hidden;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .input-shell:focus-within { border-color: #58a6ff; box-shadow: 0 0 0 3px rgba(88,166,255,.15); }
+    .input-shell.type-email    { border-color: #3fb950; box-shadow: 0 0 0 3px rgba(63,185,80,.12); }
+    .input-shell.type-phone    { border-color: #f0883e; box-shadow: 0 0 0 3px rgba(240,136,62,.12); }
+    .input-shell.type-username { border-color: #58a6ff; box-shadow: 0 0 0 3px rgba(88,166,255,.12); }
+
+    .type-badge {
+      padding: 0 18px; background: #161b22; border-right: 1.5px solid #30363d;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 700; white-space: nowrap; min-width: 110px;
+      color: #484f58; transition: color .2s, border-color .2s; gap: 6px;
+    }
+    .type-badge.email    { color: #3fb950; border-color: #3fb950; }
+    .type-badge.phone    { color: #f0883e; border-color: #f0883e; }
+    .type-badge.username { color: #58a6ff; border-color: #58a6ff; }
+
+    .search-input {
+      flex: 1; padding: 16px 18px; background: #161b22; border: none;
+      color: #c9d1d9; font-size: 1rem; outline: none; min-width: 0;
+    }
+    .search-input::placeholder { color: #484f58; }
+
+    .search-btn {
+      padding: 16px 28px; background: #238636; border: none; color: #fff;
+      font-size: .95rem; font-weight: 700; cursor: pointer; transition: background .2s; white-space: nowrap;
+    }
+    .search-btn:hover:not(:disabled) { background: #2ea043; }
+    .search-btn:disabled { background: #21262d; color: #484f58; cursor: not-allowed; }
+
+    .type-hint {
+      text-align: center; margin-top: 10px; font-size: .82rem;
+      color: #484f58; min-height: 18px; transition: color .3s;
+    }
+
+    /* ── Results ── */
+    .results { max-width: 680px; margin: 36px auto 80px; padding: 0 24px; }
+
+    .spinner {
+      text-align: center; padding: 60px 24px; color: #8b949e; font-size: .95rem;
+    }
+    .spin-ring {
+      display: block; width: 40px; height: 40px; margin: 0 auto 16px;
+      border: 3px solid #21262d; border-top-color: #58a6ff;
+      border-radius: 50%; animation: spin .75s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .summary-bar {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      background: #161b22; border: 1px solid #30363d; border-radius: 10px;
+      padding: 18px 22px; margin-bottom: 24px;
+    }
+    .stat { display: flex; flex-direction: column; gap: 2px; }
+    .stat-num { font-size: 1.75rem; font-weight: 800; }
+    .stat-label { font-size: .75rem; color: #8b949e; text-transform: uppercase; letter-spacing: .5px; }
+
+    .section-hdr {
+      font-size: .72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: #8b949e; margin: 24px 0 10px;
+    }
+
+    /* Profile card (Sherlock) */
+    .profile-card {
+      display: flex; align-items: center; gap: 14px;
+      background: #161b22; border: 1px solid #21262d; border-radius: 9px;
+      padding: 12px 16px; margin-bottom: 8px; text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .profile-card:hover { border-color: #58a6ff; background: #1c2128; }
+    .profile-platform { font-weight: 600; color: #c9d1d9; font-size: .93rem; flex: 1; }
+    .profile-url { font-size: .78rem; color: #3fb950; word-break: break-all; }
+    .ext-icon { color: #484f58; font-size: .8rem; flex-shrink: 0; }
+
+    /* Service card (Holehe) */
+    .svc-card {
+      display: flex; align-items: center; gap: 12px;
+      background: #161b22; border: 1px solid #21262d; border-radius: 9px;
+      padding: 11px 16px; margin-bottom: 8px;
+    }
+    .svc-name { font-size: .93rem; color: #c9d1d9; flex: 1; }
+    .svc-name.dim { color: #484f58; }
+    .badge-found    { padding: 3px 10px; border-radius: 20px; font-size: .7rem; font-weight: 700; background: #0d2818; color: #3fb950; border: 1px solid #238636; }
+    .badge-notfound { padding: 3px 10px; border-radius: 20px; font-size: .7rem; font-weight: 700; background: #161b22; color: #484f58; border: 1px solid #30363d; }
+
+    /* Phone link card */
+    .dork-card {
+      display: flex; align-items: center; gap: 14px;
+      background: #161b22; border: 1px solid #21262d; border-radius: 9px;
+      padding: 14px 18px; margin-bottom: 8px; text-decoration: none;
+      transition: border-color .2s;
+    }
+    .dork-card:hover { border-color: #f0883e; }
+    .dork-name { font-weight: 600; color: #f0883e; font-size: .93rem; flex: 1; }
+    .dork-url  { font-size: .75rem; color: #484f58; margin-top: 2px; }
+
+    /* Error / offline */
+    .error-box {
+      background: #1a0808; border: 1px solid #6e1a1a; border-radius: 9px;
+      padding: 16px 20px; color: #f85149; font-size: .9rem;
+    }
+    .offline-box {
+      background: #161b22; border: 1px solid #30363d; border-radius: 12px;
+      padding: 36px 32px; text-align: center; margin-top: 32px;
+    }
+    .offline-box h3 { color: #f0883e; margin-bottom: 12px; font-size: 1.1rem; }
+    .offline-box p  { color: #8b949e; font-size: .9rem; margin-bottom: 14px; line-height: 1.6; }
+    .offline-box code {
+      display: block; background: #0d1117; padding: 10px 18px; border-radius: 7px;
+      color: #3fb950; font-family: monospace; font-size: .95rem; margin: 10px 0;
+    }
+    .offline-box a { color: #58a6ff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">&#x1F916; LALOBOT <span>Suite OSINT Inteligente</span></div>
+    <div class="status-pill">
+      <span class="dot" id="dot"></span>
+      <span id="statusTxt">Verificando servidor...</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>Investiga con <em>un solo dato</em></h1>
+    <p>Ingresa un email, nombre de usuario o número de teléfono — Lalobot detecta el tipo y ejecuta la herramienta OSINT correcta automáticamente.</p>
+  </div>
+
+  <div class="search-wrap">
+    <div class="input-shell" id="shell">
+      <div class="type-badge" id="badge">?</div>
+      <input class="search-input" id="q" type="text"
+             placeholder="juan@gmail.com  ·  juanito98  ·  +52 55 1234 5678"
+             autocomplete="off" spellcheck="false">
+      <button class="search-btn" id="btn" onclick="runSearch()">Investigar</button>
+    </div>
+    <div class="type-hint" id="hint">Escribe para detectar el tipo automáticamente</div>
+  </div>
+
+  <div class="results" id="results"></div>
+
+  <script>
+    // ── Configuración ──────────────────────────────────────────────────────────
+    const API = 'http://localhost:5001';
+
+    const TYPE_INFO = {
+      email:    { label: '✉ Email',     cls: 'email',    hint: 'Se ejecutará Holehe — busca servicios donde está registrado el correo' },
+      phone:    { label: '📞 Teléfono', cls: 'phone',    hint: 'Se generarán links OSINT para investigar el número' },
+      username: { label: '👤 Usuario',  cls: 'username', hint: 'Se ejecutará Sherlock — busca perfiles en cientos de redes sociales' },
+    };
+
+    // ── Detección de tipo ──────────────────────────────────────────────────────
+    function detectType(v) {
+      v = v.trim();
+      if (!v) return null;
+      if (/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(v)) return 'email';
+      const d = v.replace(/\D/g, '');
+      if (/^\+?[\d\s\-\(\)\.]{7,20}$/.test(v) && d.length >= 7 && d.length <= 15) return 'phone';
+      return 'username';
+    }
+
+    const qEl    = document.getElementById('q');
+    const badge  = document.getElementById('badge');
+    const hint   = document.getElementById('hint');
+    const btn    = document.getElementById('btn');
+    const shell  = document.getElementById('shell');
+
+    qEl.addEventListener('input', () => {
+      const v = qEl.value;
+      const t = detectType(v);
+      if (!v.trim() || !t) {
+        badge.textContent = '?'; badge.className = 'type-badge';
+        shell.className = 'input-shell';
+        hint.textContent = 'Escribe para detectar el tipo automáticamente';
+      } else {
+        const info = TYPE_INFO[t];
+        badge.textContent = info.label; badge.className = 'type-badge ' + info.cls;
+        shell.className = 'input-shell type-' + info.cls;
+        hint.textContent = info.hint;
+      }
+    });
+
+    qEl.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); });
+
+    // ── Estado del servidor ────────────────────────────────────────────────────
+    let backendOk = false;
+    async function checkBackend() {
+      try {
+        const r = await fetch(API + '/api/ping', { signal: AbortSignal.timeout(2000) });
+        const d = await r.json();
+        backendOk = d.status === 'ok';
+      } catch { backendOk = false; }
+      document.getElementById('dot').className = 'dot ' + (backendOk ? 'online' : 'offline');
+      document.getElementById('statusTxt').textContent = backendOk ? 'Servidor activo' : 'Servidor offline';
+    }
+    checkBackend();
+
+    // ── Búsqueda ───────────────────────────────────────────────────────────────
+    async function runSearch() {
+      const q = qEl.value.trim();
+      if (!q) return;
+
+      if (!backendOk) { showOffline(); return; }
+
+      btn.disabled = true; btn.textContent = 'Buscando...';
+      const resEl = document.getElementById('results');
+      resEl.innerHTML = '<div class="spinner"><span class="spin-ring"></span>Ejecutando investigación…</div>';
+
+      try {
+        const r = await fetch(API + '/api/query?q=' + encodeURIComponent(q));
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        const data = await r.json();
+        renderResults(data);
+      } catch (e) {
+        resEl.innerHTML = '<div class="error-box">Error al conectar con el servidor: ' + esc(e.message) + '</div>';
+      } finally {
+        btn.disabled = false; btn.textContent = 'Investigar';
+      }
+    }
+
+    // ── Renderizado ────────────────────────────────────────────────────────────
+    function renderResults(data) {
+      const el = document.getElementById('results');
+      if (data.error) { el.innerHTML = '<div class="error-box">⚠ ' + esc(data.error) + '</div>'; return; }
+      if (data.type === 'email')    renderEmail(el, data);
+      else if (data.type === 'phone')    renderPhone(el, data);
+      else if (data.type === 'username') renderUsername(el, data);
+    }
+
+    function renderEmail(el, data) {
+      const found    = data.found    || [];
+      const notFound = data.not_found || [];
+      let html = '<div class="summary-bar">'
+        + stat(found.length, 'Encontrado', '#3fb950')
+        + stat(notFound.length, 'No registrado', '#484f58')
+        + '</div>';
+
+      if (found.length) {
+        html += '<div class="section-hdr">✓ Registrado en estos servicios</div>';
+        found.forEach(f => {
+          html += '<div class="svc-card"><span class="svc-name">' + esc(f.service)
+               + '</span><span class="badge-found">Registrado</span></div>';
+        });
+      }
+      if (notFound.length) {
+        html += '<div class="section-hdr">— No encontrado en</div>';
+        notFound.forEach(f => {
+          html += '<div class="svc-card"><span class="svc-name dim">' + esc(f.service)
+               + '</span><span class="badge-notfound">No registrado</span></div>';
+        });
+      }
+      el.innerHTML = html;
+    }
+
+    function renderUsername(el, data) {
+      const found = data.found || [];
+      let html = '<div class="summary-bar">' + stat(found.length, 'Perfiles encontrados', '#58a6ff') + '</div>';
+
+      if (found.length) {
+        html += '<div class="section-hdr">Perfiles encontrados en redes sociales</div>';
+        found.forEach(f => {
+          html += '<a class="profile-card" href="' + esc(f.url) + '" target="_blank" rel="noopener">'
+               + '<div><div class="profile-platform">' + esc(f.platform) + '</div>'
+               + '<div class="profile-url">' + esc(f.url) + '</div></div>'
+               + '<span class="ext-icon">↗</span></a>';
+        });
+      } else {
+        html += '<div class="error-box">No se encontraron perfiles para este usuario.</div>';
+      }
+      el.innerHTML = html;
+    }
+
+    function renderPhone(el, data) {
+      const links = data.links || [];
+      let html = '<div class="section-hdr">Links de búsqueda OSINT</div>';
+      links.forEach(l => {
+        if (!l.url) return;
+        html += '<a class="dork-card" href="' + esc(l.url) + '" target="_blank" rel="noopener">'
+             + '<div><div class="dork-name">' + esc(l.name) + '</div>'
+             + '<div class="dork-url">' + esc(l.url) + '</div></div>'
+             + '<span class="ext-icon" style="color:#f0883e">↗</span></a>';
+      });
+      el.innerHTML = html;
+    }
+
+    function showOffline() {
+      document.getElementById('results').innerHTML = `
+        <div class="offline-box">
+          <h3>🔌 Servidor no disponible</h3>
+          <p>Para usar Lalobot en modo completo, inicia el servidor local en tu máquina:</p>
+          <code>python3 main.py web</code>
+          <p>Luego recarga esta página o accede directamente desde<br>
+          <a href="http://localhost:5001" target="_blank">http://localhost:5001</a></p>
+        </div>`;
+    }
+
+    function stat(n, label, color) {
+      return '<div class="stat"><span class="stat-num" style="color:' + color + '">' + n
+           + '</span><span class="stat-label">' + label + '</span></div>';
+    }
+
+    function esc(s) {
+      return String(s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    }
+  </script>
+</body>
+</html>
