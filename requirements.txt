@@ -1,2 +1,8 @@
 flask
 holehe
+maigret
+ghunt
+instaloader
+phonenumbers
+beautifulsoup4
+requests

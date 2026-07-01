@@ -19,3 +19,15 @@ datastore/secret.txt
 .npm/
 .bashrc
 .profile
+
+# Entorno virtual de Python (se recrea con requirements.txt)
+venv/
+
+# Binario de PhoneInfoga (~30MB; se baja con tools/fetch_phoneinfoga.sh)
+tools/phoneinfoga
+
+# Sesiones de Instagram — contienen cookies/credenciales, NUNCA commitear
+datastore/ig_sessions/
+
+# Reportes/salidas OSINT generados (pueden contener datos personales)
+lalobot/reports/*.txt

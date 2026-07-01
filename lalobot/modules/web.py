@@ -1,7 +1,12 @@
 from concurrent.futures import ThreadPoolExecutor
-from flask import Flask, request, jsonify, render_template_string
+from flask import Flask, request, jsonify, Response
 
 app = Flask(__name__)
+
+
+@app.route("/")
+def index():
+    return Response(HTML, mimetype="text/html")
 
 
 @app.after_request
@@ -33,7 +38,8 @@ def api_query():
     from lalobot.modules.scanner import detect_type, capture_sherlock, capture_holehe, phone_dorks
     from lalobot.modules.maigret_scan import capture_maigret
     from lalobot.modules.ghunt_scan import capture_ghunt
-    from lalobot.modules.phoneinfooga import capture as capture_phone
+    from lalobot.modules.phoneinfooga import capture as capture_phone, footprint as phone_footprint
+    from lalobot.modules.instagram_scan import capture as capture_instagram
 
     query_type = detect_type(q)
 
@@ -49,25 +55,28 @@ def api_query():
         })
 
     if query_type == "phone":
-        with ThreadPoolExecutor(max_workers=2) as ex:
+        with ThreadPoolExecutor(max_workers=3) as ex:
             f_phone = ex.submit(capture_phone, q)
             f_dorks = ex.submit(phone_dorks, q)
+            f_fp = ex.submit(phone_footprint, q)
         return jsonify({
             "type": "phone",
             "target": q,
             "phoneinfooga": f_phone.result(),
-            "links": f_dorks.result(),
+            "links": (f_dorks.result() or []) + (f_fp.result() or []),
         })
 
     # username
-    with ThreadPoolExecutor(max_workers=2) as ex:
+    with ThreadPoolExecutor(max_workers=3) as ex:
         f_sherlock = ex.submit(capture_sherlock, q)
         f_maigret = ex.submit(capture_maigret, q)
+        f_instagram = ex.submit(capture_instagram, q)
     return jsonify({
         "type": "username",
         "target": q,
         "sherlock": f_sherlock.result(),
         "maigret": f_maigret.result(),
+        "instagram": f_instagram.result(),
     })
 
 
@@ -135,6 +144,7 @@ HTML = """<!DOCTYPE html>
     .tool-badge.holehe{background:#0d2818;color:#3fb950;border:1px solid #238636}
     .tool-badge.ghunt{background:#3c1f0d;color:#f0883e;border:1px solid #bd561d}
     .tool-badge.phoneinfooga{background:#1a1a0d;color:#e3b341;border:1px solid #9e6a03}
+    .tool-badge.instagram{background:#2c0d1f;color:#e1306c;border:1px solid #c13584}
     .tool-badge.dorks{background:#161b22;color:#8b949e;border:1px solid #30363d}
     .tool-count{font-size:.82rem;color:#8b949e}
 
@@ -280,7 +290,27 @@ HTML = """<!DOCTYPE html>
       html += toolSection('Sherlock', 'sherlock', sh, renderProfileList);
       html += '<hr class="divider">';
       html += toolSection('Maigret', 'maigret', mg, renderProfileList);
+      html += '<hr class="divider">';
+      html += `<div class="tool-section"><div class="tool-header"><span class="tool-badge instagram">Instagram</span></div>${renderInstagram(data.instagram || {})}</div>`;
       el.innerHTML = html;
+    }
+
+    function renderInstagram(ig) {
+      if (ig.error) return `<div class="warn-box">⚠ ${esc(ig.error)}</div>`;
+      if (!ig.found) return `<div class="warn-box">Sin datos de Instagram.</div>`;
+      let h = '<div class="info-grid">';
+      h += infoItem('Usuario', '@' + ig.username);
+      if (ig.full_name) h += infoItem('Nombre', ig.full_name);
+      h += infoItem('Seguidores', ig.followers);
+      h += infoItem('Seguidos', ig.following);
+      h += infoItem('Publicaciones', ig.posts);
+      h += infoItem('Privada', ig.is_private ? 'Sí' : 'No');
+      h += infoItem('Verificada', ig.is_verified ? '✓ Sí' : 'No');
+      if (ig.external_url) h += infoItem('Enlace', ig.external_url);
+      h += '</div>';
+      if (ig.biography) h += `<div class="info-item" style="margin-bottom:8px"><div class="info-key">Biografía</div><div class="info-val">${esc(ig.biography)}</div></div>`;
+      if (ig.profile_pic) h += `<div style="margin-top:10px"><img src="${esc(ig.profile_pic)}" style="width:80px;height:80px;border-radius:50%;border:2px solid #30363d" alt="foto" referrerpolicy="no-referrer"></div>`;
+      return h;
     }
 
     function renderProfileList(data) {

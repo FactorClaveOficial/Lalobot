@@ -13,6 +13,19 @@ def cmd_scan(args):
     setup()
     scan(username=args.user, email=args.email)
 
+    if args.user:
+        from lalobot.modules.instagram_scan import capture as capture_instagram
+        ig = capture_instagram(args.user)
+        print("\n[ Instagram ]")
+        if ig.get("found"):
+            print(f"  @{ig['username']} — {ig.get('full_name','')}")
+            print(f"  Seguidores: {ig['followers']} · Seguidos: {ig['following']} · Posts: {ig['posts']}")
+            print(f"  Privada: {'sí' if ig['is_private'] else 'no'} · Verificada: {'sí' if ig['is_verified'] else 'no'}")
+            if ig.get("biography"):
+                print(f"  Bio: {ig['biography']}")
+        else:
+            print(f"  {ig.get('error', 'sin datos')}")
+
 
 def cmd_search(args):
     from lalobot.modules.osint_search import run

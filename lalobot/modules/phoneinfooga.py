@@ -1,5 +1,11 @@
+import re
 import subprocess
 import sys
+from pathlib import Path
+from urllib.parse import unquote
+
+BASE_DIR = Path(__file__).resolve().parents[2]
+PHONEINFOGA_BIN = BASE_DIR / "tools" / "phoneinfoga"
 
 
 def setup():
@@ -8,6 +14,36 @@ def setup():
     except ImportError:
         print("[*] Instalando phonenumbers...")
         subprocess.run([sys.executable, "-m", "pip", "install", "phonenumbers"], check=True)
+
+
+def footprint(phone: str) -> list:
+    """Ejecuta el binario real de PhoneInfoga y devuelve los dorks OSINT
+    (búsquedas Google por redes sociales, proveedores desechables, etc.)."""
+    if not PHONEINFOGA_BIN.exists():
+        return []
+    try:
+        result = subprocess.run(
+            [str(PHONEINFOGA_BIN), "scan", "-n", phone],
+            capture_output=True, text=True, timeout=40
+        )
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
+        return []
+
+    links, category = [], "PhoneInfoga"
+    for line in result.stdout.splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        if s.endswith(":") and not s.startswith("URL"):
+            category = s.rstrip(":")
+            continue
+        m = re.match(r"URL:\s*(https?://\S+)", s)
+        if m:
+            url = m.group(1)
+            site = re.search(r"site:([^\s+&|]+)", unquote(url))
+            name = f"{category} · {site.group(1)}" if site else category
+            links.append({"name": name, "url": url})
+    return links
 
 
 def _type_name(t) -> str:
