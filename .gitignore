@@ -23,8 +23,9 @@ datastore/secret.txt
 # Entorno virtual de Python (se recrea con requirements.txt)
 venv/
 
-# Binario de PhoneInfoga (~30MB; se baja con tools/fetch_phoneinfoga.sh)
+# Binario de PhoneInfoga (~30MB; Linux/Mac/Windows)
 tools/phoneinfoga
+tools/phoneinfoga.exe
 
 # Sesiones de Instagram — contienen cookies/credenciales, NUNCA commitear
 datastore/ig_sessions/

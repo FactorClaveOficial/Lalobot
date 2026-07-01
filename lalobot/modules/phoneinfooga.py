@@ -1,3 +1,4 @@
+import platform
 import re
 import subprocess
 import sys
@@ -5,7 +6,8 @@ from pathlib import Path
 from urllib.parse import unquote
 
 BASE_DIR = Path(__file__).resolve().parents[2]
-PHONEINFOGA_BIN = BASE_DIR / "tools" / "phoneinfoga"
+_BIN_NAME = "phoneinfoga.exe" if platform.system() == "Windows" else "phoneinfoga"
+PHONEINFOGA_BIN = BASE_DIR / "tools" / _BIN_NAME
 
 
 def setup():
